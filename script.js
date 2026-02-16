@@ -19,3 +19,26 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section)
 })
+
+// Project filter
+const filterBtns = document.querySelectorAll('.filter-btn')
+const projectCards = document.querySelectorAll('.project-card')
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'))
+        // Add active to clicked button
+        this.classList.add('active')
+
+        const filter = this.getAttribute('data-filter')
+
+        projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'block'
+            } else {
+                card.style.display = 'none'
+            }
+        })
+    })
+})
