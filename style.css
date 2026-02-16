@@ -75,6 +75,14 @@ nav a:hover {
     font-weight: 300;
 }
 
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 40px;
+    object-fit: cover;
+}
+
 /* SECTIONS */
 section {
     padding: 120px 60px;
